@@ -1,6 +1,9 @@
-package stacks
+package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Stack []string
 
@@ -9,26 +12,38 @@ func (s *Stack) IsEmpty() bool {
 	return len(*s) == 0
 }
 func (s *Stack) Push(a string) {
+	fmt.Println("In push")
 	*s = append(*s, a)
-	fmt.Println("S push:", s)
+	fmt.Println("S push:", *s)
 }
 
 func (s *Stack) Pop() {
 	if !s.IsEmpty() {
-		*s = s[:len(*s)-1]
+		fmt.Println("Pop", s)
+		index := len(*s) - 1
+		fmt.Println("length", index)
+		*s = (*s)[:index]
 	}
-
 }
 
-func Stackify(input string) {
-	var s *Stack
+func Stackify(input string) string {
+	var s = make(Stack, 0)
+	fmt.Println("Input: ", input)
 	//s = strings.Split(input, "")
-	for i := 0; i < len(input); i++ {
-		if string(input[i]) != "#" {
-			s.Push(string(input[i]))
+	for _, str := range input {
+		if string(str) != "#" {
+			s.Push(string(str))
 		} else {
 			s.Pop()
 		}
 	}
-	return
+	fmt.Println("Output: ", s)
+	output := strings.Join(s, "")
+	return output
+}
+
+func main() {
+	input := "#"
+	output := Stackify(input)
+	fmt.Println("Output:", output)
 }

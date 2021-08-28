@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"sort"
 
 	"github.com/vidhlakh/common-algorithms/anagram"
-	"github.com/vidhlakh/common-algorithms/stacks"
+	"github.com/vidhlakh/common-algorithms/intersection"
+	"github.com/vidhlakh/common-algorithms/stringmanipulate"
 )
 
 func main() {
@@ -30,5 +32,12 @@ func main() {
 		fmt.Println("String are not anagrams ")
 	}
 	input := "abc#"
-	stacks.Stackify(input)
+	stringmanipulate.Stackify(input)
+
+	n1 := []int{1, 2, 1, 2}
+	n2 := []int{1, 0, 2}
+	sort.Ints(n1)
+	sort.Ints(n2)
+	intersectionArray := intersection.IntersectionOfTwoSortedArrays(n1, n2)
+	fmt.Println("Intersection of sorted array:", intersectionArray)
 }
