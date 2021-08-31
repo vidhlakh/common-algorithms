@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	"reflect"
 
 	"github.com/vidhlakh/common-algorithms/anagram"
 	"github.com/vidhlakh/common-algorithms/intersection"
-	"github.com/vidhlakh/common-algorithms/stringmanipulate"
+	"github.com/vidhlakh/common-algorithms/plusone"
+	"github.com/vidhlakh/common-algorithms/stack"
 )
 
 func main() {
@@ -32,12 +33,22 @@ func main() {
 		fmt.Println("String are not anagrams ")
 	}
 	input := "abc#"
-	stringmanipulate.Stackify(input)
+	stack.Stackify(input)
 
 	n1 := []int{1, 2, 1, 2}
 	n2 := []int{1, 0, 2}
-	sort.Ints(n1)
-	sort.Ints(n2)
+	intersectionArray2 := intersection.IntersectionOfTwoArrays(n1, n2)
+	fmt.Println("Intersection of two array:", intersectionArray2)
+	// sort.Ints(n1)
+	// sort.Ints(n2)
 	intersectionArray := intersection.IntersectionOfTwoSortedArrays(n1, n2)
 	fmt.Println("Intersection of sorted array:", intersectionArray)
+	a := []int{}
+	b := []int{}
+	if reflect.DeepEqual(a, b) {
+		fmt.Println("Equal")
+	}
+	//pluone
+	plusoneresult := plusone.PlusOne([]int{1, 2, 3})
+	fmt.Println("Plus one :", plusoneresult)
 }
