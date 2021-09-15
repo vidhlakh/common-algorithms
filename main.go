@@ -5,6 +5,7 @@ import (
 	"reflect"
 
 	"github.com/vidhlakh/common-algorithms/anagram"
+	"github.com/vidhlakh/common-algorithms/binarySearchTree"
 	"github.com/vidhlakh/common-algorithms/intersection"
 	"github.com/vidhlakh/common-algorithms/linkedlist"
 	"github.com/vidhlakh/common-algorithms/movezeros"
@@ -108,4 +109,32 @@ func main() {
 	ls.Get()
 	ls.Delete(100)
 	ls.Get()
+
+	// Binary Search Tree
+	tree := &binarySearchTree.Node{Key: 100}
+	tree.Insert(52)
+	tree.Insert(7)
+	tree.Insert(24)
+	tree.Insert(19)
+	tree.Insert(76)
+	tree.Insert(88)
+	tree.Insert(203)
+	tree.Insert(150)
+	tree.Insert(276)
+	tree.Insert(310)
+
+	fmt.Println("Tree:", tree)
+	fmt.Println("Count:", binarySearchTree.Count)
+	binarySearchTree.Count = 0
+	tree.Search(76)
+	fmt.Println("Count:", binarySearchTree.Count)
+	binarySearchTree.Count = 0
+	tree.Search(203)
+	fmt.Println("Count:", binarySearchTree.Count)
+	binarySearchTree.Count = 0
+	tree.Search(52)
+	fmt.Println("Count:", binarySearchTree.Count)
+	binarySearchTree.Count = 0
+	tree.Search(276)
+	fmt.Println("Count:", binarySearchTree.Count)
 }
