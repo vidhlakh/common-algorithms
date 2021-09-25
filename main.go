@@ -10,6 +10,8 @@ import (
 	"github.com/vidhlakh/common-algorithms/linkedlist"
 	"github.com/vidhlakh/common-algorithms/movezeros"
 	"github.com/vidhlakh/common-algorithms/plusone"
+	"github.com/vidhlakh/common-algorithms/reverse"
+	"github.com/vidhlakh/common-algorithms/solid"
 	"github.com/vidhlakh/common-algorithms/stack"
 	"github.com/vidhlakh/common-algorithms/twosums"
 )
@@ -137,4 +139,27 @@ func main() {
 	binarySearchTree.Count = 0
 	tree.Search(276)
 	fmt.Println("Count:", binarySearchTree.Count)
+
+	//solid polymorphism
+	// declaring a rectangle instance
+	rectangle := solid.Rectangle{
+
+		Length: 10.5,
+		Width:  12.25,
+	}
+
+	// declaring a square instance
+	square := solid.Square{
+
+		Side: 15.0,
+	}
+
+	// printing the calculated result
+	fmt.Printf("Area of rectangle: %.3f unit sq.\n", rectangle.Area())
+	fmt.Printf("Area of square: %.3f unit sq.\n", square.Area())
+
+	// reverse a string
+
+	reverseinput := "hello"
+	reverse.ReverseString([]byte(reverseinput))
 }
