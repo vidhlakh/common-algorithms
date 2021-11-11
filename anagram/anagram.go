@@ -29,3 +29,24 @@ func IsAnagram(str1 string, str2 string) bool {
 	fmt.Println("Hash1", hash1, "hash2:", hash2)
 	return reflect.DeepEqual(hash1, hash2)
 }
+
+func IsAnagramsimple(s string, t string) bool {
+	alphabets := make([]int, 26)
+
+	for i := range s {
+		alphabets[s[i]-'a']++
+	}
+
+	for i := range t {
+		alphabets[t[i]-'a']--
+	}
+
+	for i := range alphabets {
+		if alphabets[i] != 0 {
+			return false
+		}
+	}
+
+	return true
+
+}

@@ -6,6 +6,7 @@ import (
 
 	"github.com/vidhlakh/common-algorithms/anagram"
 	"github.com/vidhlakh/common-algorithms/binarySearchTree"
+	"github.com/vidhlakh/common-algorithms/findDuplicates"
 	"github.com/vidhlakh/common-algorithms/intersection"
 	"github.com/vidhlakh/common-algorithms/linkedlist"
 	"github.com/vidhlakh/common-algorithms/movezeros"
@@ -162,4 +163,11 @@ func main() {
 
 	reverseinput := "hello"
 	reverse.ReverseString([]byte(reverseinput))
+
+	revint := 1534236469
+	_ = reverse.ReverseIntSimple(revint)
+
+	//find unique char
+	findDuplicates.FirstUniqChar("loveleetcode")
+
 }
